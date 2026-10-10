@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Arvin Yan//Birthday Dinner//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:birthday-dinner-20261013@arvinyuchen.github.io
+DTSTAMP:20261010T020000Z
+DTSTART:20261013T070000Z
+DTEND:20261013T100000Z
+SUMMARY:Arvin's Birthday Dinner
+LOCATION:Solita\, Canberra
+DESCRIPTION:Celebrating Arvin's 22nd birthday. Just chill.
+URL:https://arvinyuchen.github.io/birthday-dinner/
+END:VEVENT
+END:VCALENDAR
