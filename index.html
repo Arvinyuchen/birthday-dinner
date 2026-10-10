@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arvin's Birthday Dinner</title>
+<meta name="description" content="You're invited to dinner for Arvin's birthday. Solita, Canberra. Tuesday 13 October 2026, 6 pm.">
+<meta property="og:title" content="Arvin's Birthday Dinner">
+<meta property="og:description" content="Solita, Canberra · Tuesday 13 October, 6 pm · Just chill">
+<meta name="theme-color" content="#f6f6f4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121416" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap">
+<style>
+  /* Layout: one narrow column, generous vertical rhythm, hairline rules for the facts. */
+  :root {
+    --bg: #f6f6f4;
+    --fg: #16181a;
+    --muted: #6d7177;
+    --line: #d9dbd6;
+    --accent: #2f6f5e;
+    --font: "Geist", "Helvetica Neue", Arial, sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121416; --fg: #ececea; --muted: #9a9ea4; --line: #2b2f33; --accent: #7fbfa9;
+      color-scheme: dark;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg); color: var(--fg);
+    font-family: var(--font); font-size: 17px; line-height: 1.55; font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .page {
+    max-width: 640px; margin: 0 auto;
+    padding-inline: 20px; padding-block: 56px 72px;
+    display: flex; flex-direction: column; gap: 56px;
+  }
+  h1, h2 { margin: 0; text-wrap: balance; }
+  p { margin: 0; }
+
+  .eyebrow {
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); font-weight: 500;
+  }
+  .hero { display: flex; flex-direction: column; gap: 20px; }
+  .hero h1 {
+    font-size: clamp(40px, 9vw, 64px); line-height: 1.02; font-weight: 500; letter-spacing: -0.03em;
+  }
+  .hero h1 em { font-style: normal; color: var(--muted); font-weight: 300; }
+  .lede { font-size: 19px; color: var(--muted); max-width: 32ch; }
+
+  .facts { margin: 0; border-top: 1px solid var(--line); }
+  .fact {
+    display: grid; grid-template-columns: 96px 1fr; gap: 16px;
+    padding-block: 18px; border-bottom: 1px solid var(--line);
+  }
+  .fact dt { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 500; padding-top: 4px; }
+  .fact dd { margin: 0; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+  .fact dd strong { font-weight: 500; font-size: 20px; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+  .fact dd span { color: var(--muted); }
+  .links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 4px; }
+  a.link {
+    color: var(--fg); text-decoration: none; font-size: 15px; font-weight: 500;
+    border-bottom: 1px solid var(--fg); padding-bottom: 1px;
+  }
+  a.link:hover { color: var(--accent); border-color: var(--accent); }
+  a.link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .note { display: flex; flex-direction: column; gap: 12px; max-width: 54ch; }
+  .note p { font-size: 18px; }
+  .sig { color: var(--muted); }
+
+  .reply { border-left: 2px solid var(--accent); padding-left: 16px; display: flex; flex-direction: column; gap: 6px; }
+  .reply h2 { font-size: 20px; font-weight: 500; letter-spacing: -0.02em; }
+  .reply p { color: var(--muted); }
+
+  footer { color: var(--muted); font-size: 13px; }
+
+  @media (max-width: 440px) {
+    .fact { grid-template-columns: 1fr; gap: 6px; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero > * { animation: rise 600ms cubic-bezier(.2,.7,.2,1) both; }
+    .hero > *:nth-child(2) { animation-delay: 80ms; }
+    .hero > *:nth-child(3) { animation-delay: 160ms; }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+  <section class="hero">
+    <p class="eyebrow">You're invited</p>
+    <h1>Dinner for Arvin's birthday<em>.</em></h1>
+    <p class="lede">A low-key dinner with the people I actually like. Come hungry, stay as long as you want.</p>
+  </section>
+
+  <dl class="facts">
+    <div class="fact">
+      <dt>When</dt>
+      <dd>
+        <strong>Tuesday 13 October, 6:00 pm</strong>
+        <span>2026 · Canberra time</span>
+        <div class="links">
+          <a class="link" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Arvin%27s%20Birthday%20Dinner&amp;dates=20261013T180000/20261013T210000&amp;ctz=Australia/Sydney&amp;location=Solita%2C%20Canberra&amp;details=Dinner%20for%20Arvin%27s%20birthday.%20Just%20chill." target="_blank" rel="noopener">Add to Google Calendar</a>
+        </div>
+      </dd>
+    </div>
+    <div class="fact">
+      <dt>Where</dt>
+      <dd>
+        <strong>Solita</strong>
+        <span>Canberra</span>
+        <div class="links">
+          <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Solita%20Canberra" target="_blank" rel="noopener">Open in Maps</a>
+        </div>
+      </dd>
+    </div>
+    <div class="fact">
+      <dt>Vibe</dt>
+      <dd>
+        <strong>Just chill</strong>
+        <span>No dress code, no gifts needed. Good food and good company is the whole plan.</span>
+      </dd>
+    </div>
+  </dl>
+
+  <section class="note">
+    <p>Another year, another excuse to eat too much. It would mean a lot to have you there. Bring your appetite and whatever stories you've been saving.</p>
+    <p class="sig">Arvin</p>
+  </section>
+
+  <section class="reply">
+    <h2>Can you make it?</h2>
+    <p>Just message me back wherever you got this link. A simple yes is perfect.</p>
+  </section>
+
+  <footer>13 October 2026 · Solita, Canberra</footer>
+</main>
+</body>
+</html>
