@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#121416" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Mrs+Saint+Delafield&display=swap">
 <style>
   /* Layout: one narrow column, generous vertical rhythm, hairline rules for the facts. */
   :root {
@@ -21,6 +21,7 @@
     --line: #d9dbd6;
     --accent: #2f6f5e;
     --font: "Geist", "Helvetica Neue", Arial, sans-serif;
+    --font-script: "Mrs Saint Delafield", "Snell Roundhand", "Apple Chancery", cursive;
     color-scheme: light;
   }
   @media (prefers-color-scheme: dark) {
@@ -53,9 +54,11 @@
   }
   .hero { display: flex; flex-direction: column; gap: 20px; }
   .hero h1 {
-    font-size: clamp(40px, 9vw, 64px); line-height: 1.02; font-weight: 500; letter-spacing: -0.03em;
+    font-family: var(--font-script); font-weight: 400;
+    font-size: clamp(60px, 14vw, 104px); line-height: 1.05; letter-spacing: 0;
+    display: flex; flex-direction: column; gap: 0;
   }
-  .hero h1 em { font-style: normal; color: var(--muted); font-weight: 300; }
+  .hero h1 .line { display: block; padding-inline: 0.08em; }
   .lede { font-size: 19px; color: var(--muted); max-width: 32ch; }
 
   .facts { margin: 0; border-top: 1px solid var(--line); }
@@ -79,20 +82,26 @@
   .note p { font-size: 18px; }
   .sig { color: var(--muted); }
 
-  .reply { border-left: 2px solid var(--accent); padding-left: 16px; display: flex; flex-direction: column; gap: 6px; }
-  .reply h2 { font-size: 20px; font-weight: 500; letter-spacing: -0.02em; }
-  .reply p { color: var(--muted); }
-
   footer { color: var(--muted); font-size: 13px; }
 
   @media (max-width: 440px) {
     .fact { grid-template-columns: 1fr; gap: 6px; }
   }
   @media (prefers-reduced-motion: no-preference) {
-    .hero > * { animation: rise 600ms cubic-bezier(.2,.7,.2,1) both; }
-    .hero > *:nth-child(2) { animation-delay: 80ms; }
-    .hero > *:nth-child(3) { animation-delay: 160ms; }
-    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    /* Handwriting reveal: each line is wiped in left to right with a soft edge, one after the other. */
+    .hero h1 .line {
+      -webkit-mask-image: linear-gradient(90deg, #000 0 calc(100% - 3rem), transparent 100%);
+              mask-image: linear-gradient(90deg, #000 0 calc(100% - 3rem), transparent 100%);
+      -webkit-mask-size: 220% 100%; mask-size: 220% 100%;
+      -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+      -webkit-mask-position: 120% 0; mask-position: 120% 0;
+      animation: write 1.7s cubic-bezier(.45,.05,.55,.95) forwards;
+    }
+    .hero h1 .line:nth-child(2) { animation-delay: 1.5s; animation-duration: 2s; }
+    .hero .eyebrow { animation: fade 700ms ease both; }
+    .hero .lede { animation: fade 900ms ease both; animation-delay: 3.3s; }
+    @keyframes write { from { -webkit-mask-position: 120% 0; mask-position: 120% 0; } to { -webkit-mask-position: 0% 0; mask-position: 0% 0; } }
+    @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
   }
 </style>
 </head>
@@ -100,7 +109,7 @@
 <main class="page">
   <section class="hero">
     <p class="eyebrow">You're invited</p>
-    <h1>Dinner for Arvin's birthday<em>.</em></h1>
+    <h1><span class="line">Dinner for</span><span class="line">Arvin's birthday</span></h1>
     <p class="lede">A low-key dinner with the people I actually like. Come hungry, stay as long as you want.</p>
   </section>
 
@@ -137,11 +146,6 @@
   <section class="note">
     <p>Another year, another excuse to eat too much. It would mean a lot to have you there. Bring your appetite and whatever stories you've been saving.</p>
     <p class="sig">Arvin</p>
-  </section>
-
-  <section class="reply">
-    <h2>Can you make it?</h2>
-    <p>Just message me back wherever you got this link. A simple yes is perfect.</p>
   </section>
 
   <footer>13 October 2026 · Solita, Canberra</footer>
