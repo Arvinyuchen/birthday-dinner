@@ -92,8 +92,8 @@
     @keyframes draw { to { stroke-dashoffset: 0; } }
     @keyframes ink { 0%, 55% { fill-opacity: 0; } 100% { fill-opacity: 1; } }
     .hero .lede, .fact, footer {
-      animation: settle 700ms cubic-bezier(.2,.7,.2,1) both;
-      animation-delay: calc(var(--total) + var(--step, 0) * 160ms);
+      animation: settle 550ms cubic-bezier(.2,.7,.2,1) both;
+      animation-delay: calc(var(--total) + var(--step, 0) * 110ms);
     }
     .hero .lede { --step: 0; }
     .fact:nth-child(1) { --step: 1; }
@@ -145,7 +145,7 @@
         var title = document.getElementById("title");
         if (!title || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
         var paths = title.querySelectorAll("path"), lines = title.querySelectorAll("g.line");
-        var TOTAL = 3.0, LINE_PAUSE = 0.2, lens = [], sum = 0;
+        var TOTAL = 2.1, LINE_PAUSE = 0.15, lens = [], sum = 0;
         for (var i = 0; i < paths.length; i++) { var L = paths[i].getTotalLength(); lens.push(L); sum += L; }
         var t = 0;
         for (var li = 0; li < lines.length; li++) {
